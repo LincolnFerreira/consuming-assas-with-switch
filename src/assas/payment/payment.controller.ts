@@ -2,7 +2,7 @@ import { Controller, Get, UseInterceptors, Query } from '@nestjs/common';
 import { AssasInterceptor } from '../../assas.interceptor';
 import { PaymentService } from './payment.service';
 
-@Controller('customer')
+@Controller('payment')
 @UseInterceptors(AssasInterceptor)
 export class PaymentController {
   constructor(private readonly customerService: PaymentService) {}
