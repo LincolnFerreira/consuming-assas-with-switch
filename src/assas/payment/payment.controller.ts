@@ -5,7 +5,7 @@ import { PaymentService } from './payment.service';
 @Controller('customer')
 @UseInterceptors(AssasInterceptor)
 export class PaymentController {
-  constructor(private readonly customerService: PaymentService) {}
+  constructor(private readonly customerService: PaymentService) { }
 
   @Get()
   async findAll(@Query('subAccount') subAccount: string): Promise<any> {

@@ -27,6 +27,6 @@ export class PaymentService {
       return response.data;
     } catch (error) {
       return { error: 'Error fetching customers' };
-    }
+    }           
   }
 }

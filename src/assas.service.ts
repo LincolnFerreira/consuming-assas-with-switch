@@ -2,20 +2,20 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 
 @Injectable()
 export class AssasService {
-  private tokens = {
-    SIMULATE:
-      '$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDAwNTg2MTM6OiRhYWNoXzViZjJiMzRmLTU5MDEtNGFjOC1iOGFjLTUwYTIyYWU3NjRjOQ==',
-    REALITY:
-      '$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDAzNzY1NDY6OiRhYWNoXzMwMjEyMWUwLTVlNmItNDQyZi1hYjE0LTFkMmZlMTFiZTFmOQ==',
-    EVOCLUB:
-      '$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDA0OTA5NTI6OiRhYWNoX2NjZDc2Yjg0LWU5ZDMtNDM5NS1iYzMzLWIyMzQxY2NlZjY1Ng==',
+  private tokens = { 
+    SIMULATE: process.env.TOKEN_SIMULATE,
+    REALITY: process.env.TOKEN_REALITY,
+    EVOCLUB_SIMULATE: process.env.TOKEN_EVOCLUB_SIMULATE,
+    EVOCLUB_REALITY: process.env.TOKEN_EVOCLUB_REALITY,
   };
 
   private baseUrls = {
-    SIMULATE: 'https://sandbox.asaas.com/api/v3',
-    REALITY: 'https://api.asaas.com/v3',
-    EVOCLUB: 'https://api.asaas.com/v3',
+    SIMULATE: process.env.URL_SIMULATE,
+    REALITY: process.env.URL_REALITY,
+    EVOCLUB_SIMULATE: process.env.URL_EVOCLUB_SIMULATE,
+    EVOCLUB_REALITY: process.env.URL_EVOCLUB_REALITY,
   };
+  
 
   getToken(subAccount: string): string {
     const token = this.tokens[subAccount];
