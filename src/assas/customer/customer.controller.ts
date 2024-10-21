@@ -1,7 +1,10 @@
-import { Controller, Get, Query, Body, Param, Post, Put } from '@nestjs/common';
+
+import { Controller, Get, Query, Body, Param, Post, Put, UseInterceptors } from '@nestjs/common';
 import { CustomerService } from './customer.service';
+import { AssasInterceptor } from '../../assas.interceptor';
 
 @Controller('customers')
+@UseInterceptors(AssasInterceptor)
 export class CustomerController {
   constructor(private readonly customerService: CustomerService) {}
 
