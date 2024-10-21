@@ -2,7 +2,7 @@ import { Controller, Get, Query, Body, Param, Post, Put, UseInterceptors } from 
 import { CustomerService } from './customer.service';
 import { AssasInterceptor } from '../../assas.interceptor';
 
-@Controller('customer')
+@Controller('customers')
 @UseInterceptors(AssasInterceptor)
 export class CustomerController {
   constructor(private readonly customerService: CustomerService) {}
